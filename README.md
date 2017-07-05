@@ -44,7 +44,9 @@ use github issues to host images
   4.Then I added an addListener event to the autocomplete object when autocomplete is completedand location is selected.
   5.Then I create an object to get the place selected by using variable "place" using autocomplete.getPlace()
   and obtained the complete address and latitude and longitude of this place by using the properties of this object 
-  "place" using various   syntaxes.
+  "place" using various syntaxes.
+  
+  # STEP-4:FINDING TEMPERATURE OF A GIVEN LOCATION
   
  
   
