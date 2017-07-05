@@ -49,7 +49,8 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
   2.I stored the location typed by the user in the search box (having id as "search") in a variable "search".
   3.Then I created an object of google.maps.places.Autocomplete(search) by  the name autocomplete.
   4.Then I added an addListener event to the autocomplete object when autocomplete is completedand location is selected.
-  5.Then I create an object to get the place selected by using variable "place" using autocomplete.getPlace()
+
+5.Then I create an object to get the place selected by using variable "place" using autocomplete.getPlace()
   and obtained the complete address and latitude and longitude of this place by using the properties of this object 
 
 "place" using various syntaxes.
@@ -82,6 +83,7 @@ I   2."update()" receives the data for temperature and location and sends those 
    
    1.LOCAL STORAGE:It is used to store data in the web browser.
    It can be used by localStorage object.
+   ![graph](https://user-images.githubusercontent.com/28576445/27870420-6dbdc9e6-61c0-11e7-9cee-737ddbfeb87e.PNG)
    Data can be stored by localStorage.setItem("give id to the data to be sent",data).
    I created an array of objects which stores the location of the place and temperature of that place and named the array as "datapoints".It stores the locations in "label"which will be on the X-Axis and temperatures in "y" which will be on the Y-Axis of the graph.
    Since local storage stores strings,array is converted to string using JSON.strigify() to convert the JSON objects to strings.
