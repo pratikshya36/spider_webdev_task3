@@ -9,7 +9,8 @@
 2.The link for the website is "https://developers.google.com/maps/".
 3.Click on "web".
 ![googlemapapi](https://user-images.githubusercontent.com/28576445/27851665-6a9d5b42-6179-11e7-87e8-5d55b2add3ba.PNG)
-4.Then click on "get API".
+4.Then click on "GET A KEY".
+![api_key](https://user-images.githubusercontent.com/28576445/27851725-ba311f86-6179-11e7-8637-e5b3b773660d.PNG)
 5.Typed the project name and then click on "ENABLE API" and got my API KEY.
 6.In your HTML file include this:<script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
 Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
