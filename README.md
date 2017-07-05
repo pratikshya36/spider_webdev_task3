@@ -50,6 +50,7 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
   3.Then I created an object of google.maps.places.Autocomplete(search) by  the name autocomplete.
   4.Then I added an addListener event to the autocomplete object when autocomplete is completedand location is selected.
 
+
 5.Then I create an object to get the place selected by using variable "place" using autocomplete.getPlace()
   and obtained the complete address and latitude and longitude of this place by using the properties of this object 
 
@@ -93,6 +94,7 @@ I   2."update()" receives the data for temperature and location and sends those 
    
    2.CANVASJS:It is an HTML and JAVSCRIPT based CHARTING LIBRARY.We have to include the canvas js library in the script.
    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+   
    I created a new instance of CanvasJS.Chart and gave the title to the graph and to X-axis as well as to Y-axis and data which specifies the type of the chart as line chart and the points on X and Y-axes.
    Then I called render method using the object which invokes the API to draw the graph.
    
