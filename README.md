@@ -60,7 +60,7 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
   2.I went to the link https://openweathermap.org/api and then clicked on API key and signed up and obtained the key.
   3.Then I used AJAX in the following ways.
   1.Web browsers have built in tool called "XMLHttpRequest".It establishes connection with the URL that we specify and helps us to send or receive data.I created a new instance of this tool by the name xmlhttp.
-    xmlhttp=new XMLHttpRequest();
+t    xmlhttp=new XMLHttpRequest();
     ![xmlhttp](https://user-images.githubusercontent.com/28576445/27851938-9f4ada44-617a-11e7-98a5-70c520002f45.PNG)
   2.I used a method of this tool"open" to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&APPID="+api"
    where lat and lng are latitude and longitude of the place and api is my API KEY
@@ -70,7 +70,7 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
    
    # STEP-5:DISPLAYING THE TEMPERATURE
    1.I used 2 textboxes.
-   2."update()" receives the data for temperature and location and sends those values to the 2 boxes.
+I   2."update()" receives the data for temperature and location and sends those values to the 2 boxes.
    
    # STEP-6:CREATING THE MARKERS
    ![mark](https://user-images.githubusercontent.com/28576445/27852786-2098e610-617e-11e7-88e5-ec55d9280769.PNG)
@@ -78,20 +78,23 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
    
    # STEP-7:CREATING THE TEMPERATURE GRAPH
    I used 2 concepts here:
-   1.LOCAL STORAGE  2.CANVAS.JS
+   1.LOCAL STORAGE  2.CANVASJS
    
    1.LOCAL STORAGE:It is used to store data in the web browser.
    It can be used by localStorage object.
    Data can be stored by localStorage.setItem("give id to the data to be sent",data).
-   I created an array of objects which stores the location of the place and temperature of that place and named the array as "datapoints".
+   I created an array of objects which stores the location of the place and temperature of that place and named the array as "datapoints".It stores the locations in "label"which will be on the X-Axis and temperatures in "y" which will be on the Y-Axis of the graph.
    Since local storage stores strings,array is converted to string using JSON.strigify() to convert the JSON objects to strings.
    Data can be obtained back from local storage using  localStorage.getItem('id given to the data sent').
    The string data is converted back to JSON object using JSON.parse() method.
    I am removing the data from local storage using localStorage.removeItem('id of the data sent').
    
-   2.CANVAS.JS:
+   2.CANVASJS:It is an HTML and JAVSCRIPT based CHARTING LIBRARY.We have to include the canvas js library in the script.
+   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+   I created a new instance of CanvasJS.Chart and gave the title to the graph and to X-axis as well as to Y-axis and data which specifies the type of the chart as line chart and the points on X and Y-axes.
+   Then I called render method using the object which invokes the API to draw the graph.
    
-   
+   I used window.location.href which returns the current URL and set it as "graph.html" which displays the graph.
    
    # DESCRIPTION OF FUNCTIONS USED:
    1.initMap() : It is used to set up the google map and is also used for autocompletion purpose.It calls temperature1()and mark().
@@ -105,6 +108,7 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
    update1().
    8.update():It receives weather object from sendRequest().It converts the temperature from kelvin to celcius and displays temperature and location in the two text boxes above the map.
    9.update1():It receives address and temperature of the place searched by the user from sendRequest1().It converts the temperature from kelvin to celcius and displays temperature and address in the two text boxes above the map.
+   10.graph():It gets called when the user presses "VIEW THE GRAPH" button.It creates "datapoints" array of objects to store the locations and the corresponding temperatures.And then it stores it in local storage and loads graph.html
    
    
    
