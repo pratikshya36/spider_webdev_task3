@@ -51,7 +51,8 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
   4.Then I added an addListener event to the autocomplete object when autocomplete is completedand location is selected.
   5.Then I create an object to get the place selected by using variable "place" using autocomplete.getPlace()
   and obtained the complete address and latitude and longitude of this place by using the properties of this object 
-  "place" using various syntaxes.
+
+"place" using various syntaxes.
   
   
   # STEP-4:FINDING TEMPERATURE OF A GIVEN LOCATION
@@ -63,9 +64,9 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
     ![xmlhttp](https://user-images.githubusercontent.com/28576445/27851938-9f4ada44-617a-11e7-98a5-70c520002f45.PNG)
   2.I used a method of this tool"open" to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&APPID="+api"
    where lat and lng are latitude and longitude of the place and api is my API KEY
-    "6ae549aa7de464d892343ab1a948fa14".It will tell the object to go this URL and get teh JSON object.I sent this request using "send" method
+    "6ae549aa7de464d892343ab1a948fa14".It will tell the object to go this URL and get the JSON object.I sent this request using "send" method
     When this request receives response I declared an anonymous function and when this request receives a package bag (xmlhttp.readyState==4) and when it is succesful (xmlhttp.readyState==200).
-   I parsed the data to JSON data and obtained the location and temperature.
+   I parsed the data to JSON object and obtained the location and temperature.
    
    # STEP-5:DISPLAYING THE TEMPERATURE
    1.I used 2 textboxes.
@@ -75,8 +76,25 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
    ![mark](https://user-images.githubusercontent.com/28576445/27852786-2098e610-617e-11e7-88e5-ec55d9280769.PNG)
    1.I added an addListener event such that when the user clicks on the map, a marker is set there.Latitude and longitude are obtained from LatLng object.
    
+   # STEP-7:CREATING THE TEMPERATURE GRAPH
+   I used 2 concepts here:
+   1.LOCAL STORAGE  2.CANVAS.JS
+   
+   1.LOCAL STORAGE:It is used to store data in the web browser.
+   It can be used by localStorage object.
+   Data can be stored by localStorage.setItem("give id to the data to be sent",data).
+   I created an array of objects which stores the location of the place and temperature of that place and named the array as "datapoints".
+   Since local storage stores strings,array is converted to string using JSON.strigify() to convert the JSON objects to strings.
+   Data can be obtained back from local storage using  localStorage.getItem('id given to the data sent').
+   The string data is converted back to JSON object using JSON.parse() method.
+   I am removing the data from local storage using localStorage.removeItem('id of the data sent').
+   
+   2.CANVAS.JS:
+   
+   
+   
    # DESCRIPTION OF FUNCTIONS USED:
-   1.initMap() : It is used to set up the google map and is also used foe autocompletion purpose.It calls temperature1()and mark().
+   1.initMap() : It is used to set up the google map and is also used for autocompletion purpose.It calls temperature1()and mark().
    2.temperature1(),temperature2(),temperature3(),temperature4():They are used to find the temperature of 1st,2nd,3rd and 4th cities to be displayed in the current viewport.
     I tried in a loop but it didn't work.So had to create 4 functions.
    3.info_window() :It is used to display the infowindows.
@@ -87,6 +105,7 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
    update1().
    8.update():It receives weather object from sendRequest().It converts the temperature from kelvin to celcius and displays temperature and location in the two text boxes above the map.
    9.update1():It receives address and temperature of the place searched by the user from sendRequest1().It converts the temperature from kelvin to celcius and displays temperature and address in the two text boxes above the map.
+   
    
    
    
