@@ -1,4 +1,4 @@
-
+.
 
 ### SPIDER WEB DEVELOPMENT TASK-3
 # FRONT-END
@@ -35,3 +35,4 @@ use github issues to host images
 
 # STEP-3:INCLUSION OF SEARCH BOX WITH AUTOCOMPLETION
   1.I included google library "places" in the script
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
