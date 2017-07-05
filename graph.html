@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<style>
+</style>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+									var datapoints = localStorage.getItem('array');
+									if (!datapoints) document.write("You have not clicked on any position on the map");
+									localStorage.removeItem('array');
+									datapoints = JSON.parse(datapoints);
+									var chart = new CanvasJS.Chart("chartContainer", {
+									title:{
+											text: "TEMPERATURE GRAPH "              
+										  },
+									 axisY: {
+											title: "Temperature "
+											},
+									 axisX: {
+											title: "Places"
+											},
+									data: [              
+											{
+												type: "line",
+												dataPoints: datapoints
+											}
+										   ]
+											});
+									chart.render();
+								}
+</script>
+
+<body>
+	<a href="index.html" id="goback">GO BACK</a>
+	<div id="chartContainer" style="height: 600px; width: 100%;"></div>
+	
+</body>
+</html>
