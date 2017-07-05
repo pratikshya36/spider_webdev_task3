@@ -25,6 +25,7 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
   This creates a map object of google maps.
   The map is now available on the browser page at the location mentioned by div element having id as "map" and the map is having zoom     level of 4 and centered at India(The given lat and lng are latitude and longitude of India).
   # spider_webdev_task3
+
 use github issues to host images
 
 # STEP-2:INCLUSION OF INFOWINDOWS
@@ -70,6 +71,7 @@ use github issues to host images
    2."update()" receives the data for temperature and location and sends those values to the 2 boxes.
    
    # STEP-6:CREATING THE MARKERS
+   ![mark](https://user-images.githubusercontent.com/28576445/27852786-2098e610-617e-11e7-88e5-ec55d9280769.PNG)
    1.I added an addListener event such that when the user clicks on the map, a marker is set there.Latitude and longitude are obtained from LatLng object
    
   
