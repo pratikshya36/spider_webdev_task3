@@ -1,4 +1,5 @@
 
+
 .
 
 ### SPIDER WEB DEVELOPMENT TASK-3
@@ -41,3 +42,4 @@ use github issues to host images
   3.Then I created an object of google.maps.places.Autocomplete(search) by  the name autocomplete.
   4.Then I added an addListener event to the autocomplete object when autocomplete is completedand location is selected.
   5.Then I create an object to get the place selected by using variable "place" using autocomplete.getPlace()
+  and obtained the complete address and latitude and longitude of this place by using the properties of this object "place" using various   syntaxes.
