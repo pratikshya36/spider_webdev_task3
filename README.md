@@ -1,4 +1,5 @@
 
+
 ### SPIDER WEB DEVELOPMENT TASK-3
 # FRONT-END
 # CREATED a weather application that shows the weather of the location clicked by the user on a Google Map
@@ -31,6 +32,9 @@ use github issues to host images
   2.I created an array of objects by the name of "cities" and stored the name of 4 cities and corresponding latitudes and longitudes.
   3.Then I created 4 different objects of google.maps.InfoWindow().If we create one object then we will see one infowindow which is of the last city because the content of the object will be overwritten.
   4.The different objects can be created by taking a variable s and assigning it the value "info"+i.toString() where i is the looping variable.It can be seen in the "info_window" function.
+  ![info_window](https://user-images.githubusercontent.com/28576445/27851918-8de17e70-617a-11e7-9fb9-092a6d2ba253.PNG)
+
+
   5.Each infowidow object has content and position.
     I gave content as city name and temperature.The way I got the temperature is explained later in the README.
     Position implies the position of the info window which can be specified by the latitude and longitude.
@@ -40,6 +44,7 @@ use github issues to host images
 # STEP-3:INCLUSION OF SEARCH BOX WITH AUTOCOMPLETION
   1.I included google library "places" in the script
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
+  ![auto_complete](https://user-images.githubusercontent.com/28576445/27851929-96aa69f4-617a-11e7-996d-46116701a0ef.PNG)
   2.I stored the location typed by the user in the search box (having id as "search") in a variable "search".
   3.Then I created an object of google.maps.places.Autocomplete(search) by  the name autocomplete.
   4.Then I added an addListener event to the autocomplete object when autocomplete is completedand location is selected.
@@ -54,6 +59,7 @@ use github issues to host images
   3.Then I used AJAX in the following ways.
   1.Web browsers have built in tool called "XMLHttpRequest".It establishes connection with the URL that we specify and helps us to send or receive data.I created a new instance of this tool by the name xmlhttp.
     xmlhttp=new XMLHttpRequest();
+    ![xmlhttp](https://user-images.githubusercontent.com/28576445/27851938-9f4ada44-617a-11e7-98a5-70c520002f45.PNG)
   2.I used a method of this tool to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?
     lat="+lat+"&lon="+lng+"&APPID="+api"  where lat and lng are latitude and longitude of the place and api is my API KEY
     "6ae549aa7de464d892343ab1a948fa14"
