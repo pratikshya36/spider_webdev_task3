@@ -66,7 +66,8 @@ t    xmlhttp=new XMLHttpRequest();
     ![xmlhttp](https://user-images.githubusercontent.com/28576445/27851938-9f4ada44-617a-11e7-98a5-70c520002f45.PNG)
   2.I used a method of this tool"open" to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&APPID="+api"
    where lat and lng are latitude and longitude of the place and api is my API KEY
-    "6ae549aa7de464d892343ab1a948fa14".It will tell the object to go this URL and get the JSON object.I sent this request using "send" method
+
+"6ae549aa7de464d892343ab1a948fa14".It will tell the object to go this URL and get the JSON object.I sent this request using "send" method
     When this request receives response I declared an anonymous function and when this request receives a package bag (xmlhttp.readyState==4) and when it is succesful (xmlhttp.readyState==200).
    I parsed the data to JSON object and obtained the location and temperature.
    
@@ -94,7 +95,7 @@ I   2."update()" receives the data for temperature and location and sends those 
    
    2.CANVASJS:It is an HTML and JAVSCRIPT based CHARTING LIBRARY.We have to include the canvas js library in the script.
    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-   
+   ![canvasjs](https://user-images.githubusercontent.com/28576445/27870605-e76499be-61c0-11e7-8f43-dfeb3601e1e4.PNG)
    I created a new instance of CanvasJS.Chart and gave the title to the graph and to X-axis as well as to Y-axis and data which specifies the type of the chart as line chart and the points on X and Y-axes.
    Then I called render method using the object which invokes the API to draw the graph.
    
