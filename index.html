@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WEATHER MAP</title>
+</head>
+<style>
+	#search
+	{
+		margin-top:-5%;width:40%;
+	}
+	#map
+	{
+		margin-top:2%;
+		width:100%;
+		height:500px;
+	}
+	#textbox
+	{
+		margin-top:1%;
+	}
+	{
+	#box1
+	{
+		margin-bottom:-5%;text-align:center;
+	}
+	#box2
+	{
+		margin-left:5%;text-align:center;
+	}
+	#btn
+	{
+		margin-left:50%
+	}
+</style>
+<body>
+	<div id="box">
+	<input id="search" type="text" style="text-align:center" placeholder="Enter a location"></div>
+	<div id="textbox">
+		<textarea rows="2" cols="30" id="box1" style="text-align:center" placeholder="Location"></textarea>
+		<textarea rows="2" cols="30" id="box2"style="text-align:center"placeholder="Temperature"></textarea></div>
+		<button id="btn" onclick="graph()">VIEW TEMPERATURE GRAPH</button>
+	<div id="map"></div>
+<script>
+	var temp=[],datapoints=[];
+	var loc,i,city,search,autocomplete,lat_auto,lng_auto,place;
+	var weather_api="6ae549aa7de464d892343ab1a948fa14";
+	var temp1,temp2,temp3;
+	var temp_graph=[],loc_graph=[];
+	var map,options,marker,lat,lng,url,xmlhttp,xmlhttp1,data,weather={},weather1={},content,infowindow,lat1,lng1,city;
+	var cities=[{"City":"Mumbai","lat":19.0760,"lng":72.8777},
+				{"City":"Delhi","lat":28.7041,"lng":77.1025},	
+				{"City":"Kolkata","lat":22.5726,"lng":88.3639},
+				{"City":"Chennai","lat":13.0827,"lng":80.2707}];
+				
+	function initMap()
+	{
+		options={zoom:4,center:{lat:20.5937,lng: 78.9629}};
+		map=new google.maps.Map(document.getElementById("map"),options);
+		search=document.getElementById("search");
+		autocomplete = new google.maps.places.Autocomplete(search);
+		google.maps.event.addListener(autocomplete, 'place_changed', function () {
+																					place = autocomplete.getPlace();
+																					place1=place.formatted_address;
+																					lat_auto = place.geometry.location.lat();
+																					lng_auto = place.geometry.location.lng();
+																					updateByGeo1(place1,lat_auto,lng_auto); 
+																				});
+		temperature1();
+		mark();
+	}
+	
+	function temperature1()
+	{
+		url="http://api.openweathermap.org/data/2.5/weather?lat="+(cities[0].lat)+"&lon="+(cities[0].lng)+"&APPID="+weather_api;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function ()
+											{
+												if (xmlhttp.readyState==4 && xmlhttp.status==200)
+												{
+													data=JSON.parse(xmlhttp.responseText);
+													weather.temp=data.main.temp;
+													temp1=Math.round(weather.temp-273.15);
+													temp.push(temp1);
+													temperature2();
+												}
+											};
+	}
+	
+	function temperature2()
+	{
+		url="http://api.openweathermap.org/data/2.5/weather?lat="+(cities[1].lat)+"&lon="+(cities[1].lng)+"&APPID="+weather_api;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function ()
+											{
+												if (xmlhttp.readyState==4 && xmlhttp.status==200)
+												{
+													data=JSON.parse(xmlhttp.responseText);
+													weather.temp=data.main.temp;
+													temp1=Math.round(weather.temp-273.15);
+													temp.push(temp1);
+													temperature3();
+												}
+											};
+	}
+	
+	function temperature3()
+	{
+		url="http://api.openweathermap.org/data/2.5/weather?lat="+(cities[2].lat)+"&lon="+(cities[2].lng)+"&APPID="+weather_api;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function ()
+											{
+												if (xmlhttp.readyState==4 && xmlhttp.status==200)
+												{
+													data=JSON.parse(xmlhttp.responseText);
+													weather.temp=data.main.temp;
+													temp1=Math.round(weather.temp-273.15);
+													temp.push(temp1);
+													temperature4();
+												}
+											};
+	}
+	
+	function temperature4()
+	{
+		url="http://api.openweathermap.org/data/2.5/weather?lat="+(cities[3].lat)+"&lon="+(cities[3].lng)+"&APPID="+weather_api;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function ()
+											{
+												if (xmlhttp.readyState==4 && xmlhttp.status==200)
+												{
+													data=JSON.parse(xmlhttp.responseText);
+													weather.temp=data.main.temp;
+													temp1=Math.round(weather.temp-273.15);
+													temp.push(temp1);
+													info_window();
+												}
+											};
+	}
+	
+	function info_window()
+	{
+		for(i=0;i<cities.length;i++)
+		{
+			var s="info"+i.toString();
+			city=cities[i].City;
+			lat=cities[i].lat;
+			lng=cities[i].lng;
+			temp2=temp[i];
+			var s=new google.maps.InfoWindow({
+			content:city+" "+temp2+" "+" &#8451",
+			position: {lat:cities[i].lat,lng:cities[i].lng}})								
+			s.open(map);
+		}
+	}
+	
+	function mark()
+	{
+		google.maps.event.addListener(map, 'click', function(event) {
+		marker = new google.maps.Marker({position: event.latLng, 
+										map: map});
+		lat=event.latLng.lat();
+		lng=event.latLng.lng();
+		updateByGeo(lat,lng); });
+	
+	}
+	
+	function update(weather)
+	{
+		temp3=(Math.round(weather.temp-273.15));
+		temp_graph.push(temp3);
+		loc_graph.push(weather.loc);
+		document.getElementById("box2").innerHTML=temp3+" &#8451";
+		document.getElementById("box1").innerHTML=weather.loc;
+	}
+	
+	function update1(temp1,place1)
+	{
+		temp3=(Math.round(temp1-273.15));
+		temp_graph.push(temp3);
+		loc_graph.push(place1);
+		document.getElementById("box2").innerHTML=temp3+" &#8451";
+		document.getElementById("box1").innerHTML=place1;
+	}
+	
+	function updateByGeo(lat,lng)
+	{
+		url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&APPID="+weather_api;
+		sendRequest(url);
+	}
+	
+	function updateByGeo1(place1,lat,lng)
+	{
+		url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&APPID="+weather_api;
+		sendRequest1(url,place1,lat,lng);
+	}
+	
+	function sendRequest1(url,place1,lat,lng)
+	{
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function()
+									{
+										if (xmlhttp.readyState==4 && xmlhttp.status==200)
+										{
+											data=JSON.parse(xmlhttp.responseText);
+											weather1={};
+											weather1.temp=data.main.temp;
+											temp1=weather1.temp;
+											update1(temp1,place1);
+										}								
+									};
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send();
+	}
+	
+	function sendRequest(url)
+	{
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function()
+									{
+										if (xmlhttp.readyState==4 && xmlhttp.status==200)
+										{
+											data=JSON.parse(xmlhttp.responseText);
+											weather={};
+											weather.temp=data.main.temp;
+											weather.loc=data.name;
+											update(weather);}
+									};
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send();
+	}
+	
+	function graph()
+	{
+		for (i=0;i<temp_graph.length;i++)
+		{
+			datapoints.push({label:loc_graph[i],y:temp_graph[i]});
+		}
+	datapoints = JSON.stringify(datapoints);
+	localStorage.setItem('array', datapoints);
+	window.location.href = "graph.html";
+	}
+	
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9z5ZzZ6Is_8PUnKUdXtaG0Fw-B1-AA7U&libraries=places&callback=initMap">
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
+
