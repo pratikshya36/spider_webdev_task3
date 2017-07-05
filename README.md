@@ -1,11 +1,3 @@
-
-
-
-
-
-
-.
-
 ### SPIDER WEB DEVELOPMENT TASK-3
 # FRONT-END
 # CREATED a weather application that shows the weather of the location clicked by the user on a Google Map
@@ -16,6 +8,7 @@
 1.The map can be obtained from GOOGLE MAPS API.
 2.The link for the website is "https://developers.google.com/maps/".
 3.Click on "web".
+![googlemapapi](https://user-images.githubusercontent.com/28576445/27851665-6a9d5b42-6179-11e7-87e8-5d55b2add3ba.PNG)
 4.Then click on "get API".
 5.Typed the project name and then click on "ENABLE API" and got my API KEY.
 6.In your HTML file include this:<script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
