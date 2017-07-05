@@ -3,6 +3,7 @@
 
 
 
+
 .
 
 ### SPIDER WEB DEVELOPMENT TASK-3
@@ -53,6 +54,11 @@ use github issues to host images
   1.Temperature can be obtained using OPEN WEATHER MAP API.
   2.I went to the link https://openweathermap.org/api and then clicked on API key and signed up and obtained the key.
   3.Then I used AJAX in the following ways.
+  1.Web browsers have built in tool called "XMLHttpRequest".It establishes connection with the URL that we specify and helps us to send or receive data.I created a new instance of this tool by the name xmlhttp.
+    xmlhttp=new XMLHttpRequest();
+  2.I used a method of this tool to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?
+    lat="+lat+"&lon="+lng+"&APPID="+api"  where lat and lng are latitude and longitude of the place and api is my API KEY
+    "6ae549aa7de464d892343ab1a948fa14"
   
  
   
