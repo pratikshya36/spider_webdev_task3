@@ -46,4 +46,6 @@ use github issues to host images
   and obtained the complete address and latitude and longitude of this place by using the properties of this object "place" using various   syntaxes.
   
   # STEP-4:FINDING TEMPERATURE OF THE PLACE
-    1.Temperature can be obtained using OPEN WEATHER MAP API.
+  
+  
+   
