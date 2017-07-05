@@ -1,3 +1,4 @@
+
 ### SPIDER WEB DEVELOPMENT TASK-3
 # FRONT-END
 # CREATED a weather application that shows the weather of the location clicked by the user on a Google Map
@@ -12,11 +13,14 @@
 4.Then click on "GET A KEY".
 ![api_key](https://user-images.githubusercontent.com/28576445/27851725-ba311f86-6179-11e7-8637-e5b3b773660d.PNG)
 5.Typed the project name and then click on "ENABLE API" and got my API KEY.
+![name](https://user-images.githubusercontent.com/28576445/27851810-145998ee-617a-11e7-9906-d72485998979.PNG)
 6.In your HTML file include this:<script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
 Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
 7.Then I created a function "initMap" and wrote the following code
 	options={zoom:4,center:{lat:20.5937,lng: 78.9629}};
 	map=new google.maps.Map(document.getElementById("map"),options);
+
+![initmap](https://user-images.githubusercontent.com/28576445/27851815-19bb2b86-617a-11e7-91f5-3289d719a38c.PNG)
   This creates a map object of google maps.
   The map is now available on the browser page at the location mentioned by div element having id as "map" and the map is having zoom     level of 4 and centered at India(The given lat and lng are latitude and longitude of India).
   # spider_webdev_task3
