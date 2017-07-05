@@ -1,4 +1,6 @@
+ # spider_webdev_task3
 
+use github issues to host images
 
 ### SPIDER WEB DEVELOPMENT TASK-3
 # FRONT-END
@@ -24,9 +26,8 @@ Instead of API KEY I gave my API KEY=6ae549aa7de464d892343ab1a948fa14.
 ![initmap](https://user-images.githubusercontent.com/28576445/27851815-19bb2b86-617a-11e7-91f5-3289d719a38c.PNG)
   This creates a map object of google maps.
   The map is now available on the browser page at the location mentioned by div element having id as "map" and the map is having zoom     level of 4 and centered at India(The given lat and lng are latitude and longitude of India).
-  # spider_webdev_task3
+ 
 
-use github issues to host images
 
 # STEP-2:INCLUSION OF INFOWINDOWS
   1.There are 4 infowindows which are visible when the index.html is run.
@@ -72,7 +73,23 @@ use github issues to host images
    
    # STEP-6:CREATING THE MARKERS
    ![mark](https://user-images.githubusercontent.com/28576445/27852786-2098e610-617e-11e7-88e5-ec55d9280769.PNG)
-   1.I added an addListener event such that when the user clicks on the map, a marker is set there.Latitude and longitude are obtained from LatLng object
+   1.I added an addListener event such that when the user clicks on the map, a marker is set there.Latitude and longitude are obtained from LatLng object.
+   
+   # DESCRIPTION OF FUNCTIONS USED:
+   1.initMap() : It is used to set up the google map and is also used foe autocompletion purpose.It calls temperature1()and mark().
+   2.temperature1(),temperature2(),temperature3(),temperature4():They are used to find the temperature of 1st,2nd,3rd and 4th cities to be displayed in the current viewport.
+    I tried in a loop but it didn't work.So had to create 4 functions.
+   3.info_window() :It is used to display the infowindows.
+   4.updateByGeo():It obtains latitude and longitude of the location clicked by the user and is used to set the URL and send it to sendRequest().
+   5.updateByGeo1():It obtains  the address, latitude and longitude of the location searched by the user using autocompletion and is used to set the URL and send it to sendRequest1().
+   6.sendRequest():It is used to obtain location and temperature data from the OPEN WEATHER MAP API and send them to update().
+   7.sendRequest1():It is used to obtain temperature data from the OPEN WEATHER MAP API and send the address and temperature to 
+   update1().
+   8.update():It receives weather object from sendRequest().It converts the temperature from kelvin to celcius and displays temperature and location in the two text boxes above the map.
+   9.update1():It receives address and temperature of the place searched by the user from sendRequest1().It converts the temperature from kelvin to celcius and displays temperature and address in the two text boxes above the map.
+   
+   
+   
    
   
  
