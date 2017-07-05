@@ -59,9 +59,19 @@ use github issues to host images
   1.Web browsers have built in tool called "XMLHttpRequest".It establishes connection with the URL that we specify and helps us to send or receive data.I created a new instance of this tool by the name xmlhttp.
     xmlhttp=new XMLHttpRequest();
     ![xmlhttp](https://user-images.githubusercontent.com/28576445/27851938-9f4ada44-617a-11e7-98a5-70c520002f45.PNG)
-  2.I used a method of this tool to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?
-    lat="+lat+"&lon="+lng+"&APPID="+api"  where lat and lng are latitude and longitude of the place and api is my API KEY
-    "6ae549aa7de464d892343ab1a948fa14"
+  2.I used a method of this tool"open" to get data from the url  url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&APPID="+api"
+   where lat and lng are latitude and longitude of the place and api is my API KEY
+    "6ae549aa7de464d892343ab1a948fa14".It will tell the object to go this URL and get teh JSON object.I sent this request using "send" method
+    When this request receives response I declared an anonymous function and when this request receives a package bag (xmlhttp.readyState==4) and when it is succesful (xmlhttp.readyState==200).
+   I parsed the data to JSON data and obtained the location and temperature.
+   
+   # STEP-5:DISPLAYING THE TEMPERATURE
+   1.I used 2 textboxes.
+   2."update()" receives the data for temperature and location and sends those values to the 2 boxes.
+   
+   # STEP-6:CREATING THE MARKERS
+   1.I added an addListener event such that when the user clicks on the map, a marker is set there.Latitude and longitude are obtained from LatLng object
+   
   
  
   
