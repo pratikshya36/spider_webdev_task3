@@ -42,8 +42,7 @@ use github issues to host images
   6." &#8451" is for degree C symbol.
 
 # STEP-3:INCLUSION OF SEARCH BOX WITH AUTOCOMPLETION
-  1.I included google library "places" in the script
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
+  1.I included google library "places" in the script<script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
   ![auto_complete](https://user-images.githubusercontent.com/28576445/27851929-96aa69f4-617a-11e7-996d-46116701a0ef.PNG)
   2.I stored the location typed by the user in the search box (having id as "search") in a variable "search".
   3.Then I created an object of google.maps.places.Autocomplete(search) by  the name autocomplete.
