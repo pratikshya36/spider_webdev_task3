@@ -36,3 +36,5 @@ use github issues to host images
 # STEP-3:INCLUSION OF SEARCH BOX WITH AUTOCOMPLETION
   1.I included google library "places" in the script
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"><script>
+  2.I stored the location typed by the user in the search box (having id as "search") in a variable "search".
+  3.Then I created an object of google.maps.places.Autocomplete(search) by  the name autocomplete.
