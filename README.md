@@ -2,6 +2,7 @@
 
 
 
+
 .
 
 ### SPIDER WEB DEVELOPMENT TASK-3
@@ -49,6 +50,9 @@ use github issues to host images
   
   
   # STEP-4:FINDING TEMPERATURE OF A GIVEN LOCATION
+  1.Temperature can be obtained using OPEN WEATHER MAP API.
+  2.I went to the link https://openweathermap.org/api and then clicked on API key and signed up and obtained the key.
+  3.Then I used AJAX in the following ways.
   
  
   
