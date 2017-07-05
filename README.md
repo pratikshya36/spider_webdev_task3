@@ -5,7 +5,8 @@ use github issues to host images
 ### SPIDER WEB DEVELOPMENT TASK-3
 # FRONT-END
 # CREATED a weather application that shows the weather of the location clicked by the user on a Google Map
-
+# 1.Both index.html and graph.html are to be downloaded
+# 2.The tasks will run on Chrome and Mozilla Firefox
 # STEP BY STEP APPROACH TO CREATE THE APPLICATION
 
 # STEP-1:INCLUSION OF GOOGLE MAP
@@ -115,7 +116,7 @@ I   2."update()" receives the data for temperature and location and sends those 
    9.update1():It receives address and temperature of the place searched by the user from sendRequest1().It converts the temperature from kelvin to celcius and displays temperature and address in the two text boxes above the map.
    10.graph():It gets called when the user presses "VIEW THE GRAPH" button.It creates "datapoints" array of objects to store the locations and the corresponding temperatures.And then it stores it in local storage and loads graph.html
    
-   # Both index.html and graph.html have to be downloaded
+  
    
    
    
